@@ -4,31 +4,33 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.inventory.dto.ProductRateDto;
+import com.inventory.dto.ProductDto;
+import com.inventory.model.Item;
+import com.inventory.model.Product;
+import com.inventory.repository.ItemRepository;
+import com.inventory.repository.ProductRepository;
 import com.inventory.service.ProductService;
-
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 public class ProductController {
-	
+
 	@Autowired
 	private ProductService productService;
 
 	@GetMapping("/products")
-	List<ProductRateDto> getProducts(){
-		
+	List<ProductDto> getProducts() {
+
 		return productService.getProduct();
 	}
 	
-	@PostMapping("/products")
-	List<ProductRateDto> updateProductRate(@RequestBody List<ProductRateDto> products){
-		
-		return productService.updateProductsRate(products);
+	@PutMapping("/products")
+	List<ProductDto> updateProductRate(@RequestBody List<ProductDto> products) {
+
+		return productService.updateItemRate(products);
 	}
-	
+
 }

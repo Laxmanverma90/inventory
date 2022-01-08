@@ -1,4 +1,4 @@
-package com.inventory.model;
+package com.inventory.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,17 +9,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductRateDao {
-	
-	private Integer id;
-	private Integer productId;
+public class ItemDto {
+
+	private Long itemId;
+	private Long productId;
 	private String item;
 	private BigDecimal rate;
-	private LocalDate date;
-	private String availability;
+	private LocalDate updateDate;
+	private Integer availability;
 }

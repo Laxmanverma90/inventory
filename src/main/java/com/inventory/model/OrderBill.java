@@ -3,22 +3,22 @@ package com.inventory.model;
 import java.math.BigDecimal;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter
 @Getter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class DailySalesDao {
+@AllArgsConstructor
+public class OrderBill {
 
-	private Integer id;
-	private String item;
-	private int quantity;
+	private Long orderItemId;
+	private Long productId;
+	private String productName;
+	private Long itemId;
+	private String itemName;
 	private BigDecimal rate;
+	private Integer quantity;
 	private BigDecimal amount;
-	private Integer customerId;
-	private Integer bill_id;
-	private Integer login_id;
 }
